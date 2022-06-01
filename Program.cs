@@ -1,59 +1,22 @@
 ﻿// See https://aka.ms/new-console-template for more information
-string stranger = "Another One";
-int one = 1;
 
 
-Console.WriteLine($"Hello, {stranger} {one}");
-Console.WriteLine(stranger.IndexOf("n"));
-
-int a = 10, b = 20, c = 40;
-
-int sum = a + b + c;
-
-double d = 5.0, e = 2.0;
-
-double div = d / e;
-
-int max = int.MaxValue;
-int maxIsh = max +3;
+using Accounts;
 
 
-Console.WriteLine($"The sum is {sum}");
-Console.WriteLine($"What is 70/3 {div}");
+BankAccount account = new BankAccount();
 
-Console.WriteLine($"What is the max of double {double.MaxValue}");
-Console.WriteLine($"What is the max of int {int.MaxValue}");
+Console.WriteLine($"This is my account number {account.AccountNumber} and my bal {account.Balance}. Plus my name is {account.Owner}");
 
-Console.WriteLine($"What is the maxish {maxIsh}");
-
-Console.WriteLine($"--------------------------------- List ---------");
-
-// int[] arr2 = new int [] {1,2,3,4};
-var firstArr = new int [5] {-69, 46, 10, 1, 100};
+BankAccount account2 = new BankAccount("Nerissa", decimal.MinValue);
 
 
-firstArr[1] = 20;
+Console.WriteLine($"This is my account number {account.AccountNumber} and my bal {account.Balance}. Plus my name is {account2.Owner}");
 
-for (var i = 0; i < firstArr.Count(); i++) {
-    Console.WriteLine($"The value at {i} is {firstArr[i]}");
-    };
+SavingAccount savings = new SavingAccount();
+savings.InterestRate = 0.05m;
+savings.Balance = 2000.0m;
 
-    foreach(var el in firstArr)
-    {
-        Console.WriteLine($"The value is {el}");
-    }
+savings.AddMonthlyInterest();
 
-    Console.WriteLine("---------------- Array -----");
-    
-    List<int> list = new List<int>();
-var list1 = new List<int>();
-
-    list.AddRange(firstArr);
-    list.Add(1000);
-    list.Add(10001);
-    list.Add(10002);
-    
-    foreach(var el in list)
-    {
-        Console.WriteLine($"The value is {el}");
-    }
+Console.WriteLine($"What is the balance {savings.Balance}")

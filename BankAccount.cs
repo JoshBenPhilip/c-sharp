@@ -22,3 +22,14 @@ public class BankAccount
     }
 }
 
+public void MakeDeposit(decimal amount)
+{    
+    if(amount <= 0)
+    
+    {
+        throw new ArgumentException ("What are you doing?");
+    }
+    Balance += amount;
+    }
+
+
